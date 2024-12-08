@@ -1,1 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment variables except .env.example
+.env.production
+.env.staging
+.env.development
+.env.lambda
 .env
+
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Data files
+*.xlsx
+*.xls
+*.html
+*.txt
+
+
+# Media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.webm
+*.mov
+*.avi
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Miscellaneous
+*.class
+*.pyc
+*.pyo
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Temp
+temp/
+tmp/
+
+/dataset/
+/data/
