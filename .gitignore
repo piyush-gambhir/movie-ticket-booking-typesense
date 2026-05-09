@@ -36,6 +36,8 @@ Thumbs.db
 *.xls
 *.html
 *.txt
+!requirements.txt
+!**/requirements.txt
 
 
 # Media files

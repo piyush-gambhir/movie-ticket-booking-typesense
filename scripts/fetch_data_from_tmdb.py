@@ -1,11 +1,23 @@
-import requests
-import json
 import os
+import json
+import requests
 import pandas as pd  # Import pandas for CSV handling
 from concurrent.futures import ThreadPoolExecutor
 
-# TMDB API Key
-TMDB_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YjJmZjE3OTY1ZWJiZmI0MjQxODBhNDRiNjNkMWIzYiIsIm5iZiI6MTcyNTIxMjk5OC4yMzg1NzYsInN1YiI6IjY2YWJiZTI5MzFlOWUxMjNmMDUwN2IxMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.ORBAi2kmDrpaTeOhNj84cO_KEzVH2h1I-Qbu_RkFWgE"  # Replace with your actual TMDB API Key
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # python-dotenv is optional; if not installed, rely on the shell environment.
+    pass
+
+# TMDB API read access token (v4 auth). Get yours at https://www.themoviedb.org/settings/api
+TMDB_API_KEY = os.environ.get("TMDB_API_KEY")
+if not TMDB_API_KEY:
+    raise RuntimeError(
+        "TMDB_API_KEY is not set. Add it to a .env file in this directory "
+        "(see .env.example) or export it in your shell."
+    )
 
 # Genre mapping dictionary
 GENRE_MAP = {
